@@ -1,0 +1,32 @@
+.x {
+    display: flex;
+    background-color: #f3f3f3;
+    padding: 10px;
+    overflow-y: hidden;
+    border-radius: 18px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.x::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    height: 500px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    object-fit: cover;
+    margin: 15px;
+    padding: 10 10 10 10px;
+    transition: tranform 500ms;
+}
+
+.card:hover {
+    transform: scale(1.08);
+    transition: ease-in-out 450ms
+}
+
+.card-img-top {
+    object-fit: contain;
+}
