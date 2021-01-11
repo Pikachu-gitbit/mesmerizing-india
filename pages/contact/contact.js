@@ -12,51 +12,29 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 //--------------------------- push data -------------------------------------//
-// Add a new document in collection "cities"
-var submit = document.getElementById('submit').disabled
-var feedback = document.getElementById("message").value
-var kname = document.getElementById("email").value
-var mwss = document.getElementById("name").value
-function gg() {
-    if (document.getElementById('name') == null) {
-        alert('Fill name ')
+// Add a new document in collection
+var form = document.getElementById("form");
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const fname = document.getElementById('name').value
+    const email = document.getElementById('email').value
+    const number = document.getElementById('number').value
+    const message = document.getElementById('message').value
 
-    }
-    if (document.getElementById('email') == null ){
-        alert('Fill email')
-    }
-    if (document.getElementById('message') == null) {
-        alert('Fill feedback')
-
-    }
-    else {
-        document.getElementById('submit').addEventListener('click',
-            function (event) {
-                event.preventDefault()
-
-                const fname = document.getElementById('name').value
-                const email = document.getElementById('email').value
-                const number = document.getElementById('number').value
-                const message = document.getElementById('message').value
-
-                db.collection("feedbacks").add({
-                    name: fname,
-                    Email: email,
-                    Number: number,
-                    message: message,
-                    Timestamp: firebase.firestore.FieldValue.serverTimestamp()
-                }).then(function () {
-                    console.log("Document successfully written!")
-                }).then(
-                    document.getElementById('submit').style.display = 'none'
-                ).then(
-                    document.getElementById('submited').style.display = 'block'
-                ).then(setTimeout(function () {
-                    window.location.href = './thankyou.html';
-                }, 5000)
-                )
-
-            }
-        )
-    }
-}
+    db.collection("feedbacks").doc(fname).set({
+        name: fname,
+        Email: email,
+        Number: number,
+        message: message,
+        Timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    }).then(function () {
+        console.log("Document successfully written!")
+    }).then(
+        document.getElementById('submit').style.display = 'none'
+    ).then(
+        document.getElementById('submited').style.display = 'block'
+    ).then(setTimeout(function () {
+        window.location.href = './thankyou.html';
+    }, 5000)
+    )
+})

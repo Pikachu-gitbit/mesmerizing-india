@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed back</title>
+    <!----------
+        CSS FILES 😊
+    ------------>
+    <link rel="stylesheet" href="./index.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <!-- jQuery and JS bundle w/ Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <!-------------
+            BOOTSTRAP CSS 😊
+        -------------->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="nav-bar">
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="../../index.html">MESMERIZING INDIA</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about/about.html">ABOUT</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-uppercase " href="">CONtact us <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            PAGES
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="../content pages/mumbai.html">MUMBAI</a>
+                            <a class="dropdown-item" href="../content pages/jammuandkashmir.html">JAMMU AND KASHMIR</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item active " href="../index/index.html">BACK TO HOME</a>
+                            <a class="dropdown-item  " href="./contact.html">Contact Us </a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <style>
+        .body {
+            margin: 15px;
+        }
+
+        ::placeholder {
+            text-transform: uppercase;
+            color: black;
+        }
+    </style>
+    <div class="body">
+        <div class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
+            <div class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>YOUR FEEDBACK </strong><small>will be visible to others</small>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="display-4 text-uppercase text-center m-2 ">contact us ! </div>
+
+                <hr class="   " style="width:90%;background-color: black;">
+                <div class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
+                    <form id="form" class="   justify-content-center ">
+                        <div class=" form-group mb-3  ">
+                            <input type="text" placeholder="your name" minlength="4" required
+                                class=" text-lowercase form-control" id="name">
+                        </div>
+                        <div class="form-group mb-3 ">
+                            <input type="email" placeholder="EMAIL@XYZ.COM" required
+                                class=" text-lowercase form-control" id="email" aria-describedby="emailHelp">
+                        </div>
+                        <div class="form-group mb-3 ">
+
+                            <input type="number" id="number" maxlength="10" minlength="10"
+                                placeholder="Phone number (optional)" class="form-control">
+                        </div>
+                        <input class="form-control mb-4 pt-3 p-2 pb-5 " style="padding-bottom: 100px !important;" id="message"
+                            minlength="20" maxlength="200" required placeholder=" feedback">
+                        <div class="  col-sm  align-content-center  mx-auto p-3 shadow bg-white rounded">
+                            <button id="submit" type="submit"
+                                class="btn btn-block    justify-content-center  text-uppercase btn-primary">Send it
+                                to
+                                us !</button>
+                            <button id="submited" style="display: none;opacity: 0.7;" class=" btn-block btn btn-primary"
+                                type="button">
+                                <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+                                Loading...
+                            </button>
+                    </form>
+
+                </div>
+            </div>
+            <div style="padding-top:10px;padding-bottom: 10px; margin: 0;">
+                <div class="footer text-uppercase text-center align-items-end mt-3 ">
+                    <h2 style="font-size: 15px;" class="md d-flex   text-secondary justify-content-center ">
+                        MESMERIZING INDIA 2020
+                    </h2>
+                    <h3 style="font-size: 10px; "
+                        class=" text-center  text-dark text-uppercase md d-flex justify-content-center ">
+                        <p class=" text-dark  " style="font-size:9px ;">&copy; </p>all rights reserved
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------
+            JS FILES 😊
+            ----------->
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+    <script src="./contact.js"></script>
+    <script src="../../assests/main scripts/js.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-------------
+            BOOTSTRAP COMPILER 😊
+        -------------->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

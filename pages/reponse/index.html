@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THANK YOU</title>
+    <title>FEED BACKS</title>
     <!----------
         CSS FILES 😊
     ------------>
@@ -59,14 +59,42 @@
     }
 
     body {
-        background-color: var(--cyan);
+        background: linear-gradient(#007bff, #6610f2);
+        background-repeat: no-repeat;
+    }
+
+    .gg {
+        width: 100%;
+    }
+
+    .body {
+        margin: 15px;
+    }
+
+    ::placeholder {
+        text-transform: uppercase;
+        color: rgb(206, 136, 136);
+    }
+
+    #root {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    #root::-webkit-scrollbar {
+        display: none;
     }
 </style>
 
-<body onload=redirect_to_home()>
-    <div class="nav-bar">
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary sticky-top">
-            <a class="navbar-brand" href="../index/index.html">MESMERIZING INDIA</a>
+<body>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <div class=" nav-bar ">
+        <nav class="navbar  navbar-expand-md navbar-dark bg-primary sticky-top">
+            <a class="navbar-brand" href="../../index.html">MESMERIZING INDIA</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -74,11 +102,13 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../index/index.html">HOME <span class="sr-only">(current)</span></a>
-                    </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="../about/about.html">ABOUT</a>
+                        <a class="nav-link" href="../../index.html">HOME</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../contact/contact.html">CONTACT US</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
@@ -86,11 +116,13 @@
                             PAGES
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="../content pages/mumbai.html">MUMBAI</a>
-                            <a class="dropdown-item" href="../content pages/jammuandkashmir.html">JAMMU AND KASHMIR</a>
+                            <a class="dropdown-item  " href="../content pages/Mumbai/">MUMBAI</a>
+                            <a class="dropdown-item  " href="../content pages/Mumbai/">JAMMU AND KASHMIR</a>
+                            <a class="dropdown-item  " href="../content pages/Mumbai/">GUJRAT</a>
+                            <a class="dropdown-item  " href="../content pages/Mumbai/">RAJISTHAN</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item active " href="../index/index.html">BACK TO HOME</a>
-                            <a class="dropdown-item  " href="./contact.html">Contact Us </a>
+                            <a class="dropdown-item" href="../../index.html">BACK TO HOME </a><a class="dropdown-item  "
+                                href="../contact/">Contact Us </a>
                         </div>
                     </li>
 
@@ -98,30 +130,20 @@
             </div>
         </nav>
     </div>
-    <style>
-        .body {
-            margin: 15px;
-        }
-
-        ::placeholder {
-            text-transform: uppercase;
-            color: rgb(206, 136, 136);
-        }
-    </style>
     <div class="body">
-        <div id="ll" class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
-            <div class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
-                <div class="display-4 text-uppercase text-center m-2 ">
-                    THANK YOU
-                    <hr class="   " style="width:90%;background-color: black;">
-                    <div class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded">
-                        <h1 class="lead " style="font-size: 30px;">your
-                            FEED BACK HAS BEEN SUBMITED YOU WILL BE
-                            REDIRECTED TO OUR RESPONSE PAGE IN A FEW SECONDS </h1>
-                    </div>
-                </div>
+        <div id="ll" class=" mt-2 col-sm  align-content-center pb-3 pt-3 shadow bg-white rounded ">
+            <div class="display-4 text-uppercase text-center ">
+                user experinces
             </div>
-            <div class="" style="padding-top: 40px;padding-bottom: 10px; margin: 0;">
+            <hr style="border: 1px solid;opacity: 0.5;">
+
+            <div class="comments">
+                <h2 id="root" class=" mt-2 col-sm  align-content-center pb-3 mx-auto pt-3 shadow bg-white rounded ">
+                    <div id="name" class="text-secondary   p-1  "></div>
+                </h2>
+            </div>
+            <hr style="border: 1px solid;opacity: 0.5;">
+            <div style="padding-top: 40px;padding-bottom: 10px; margin: 0;">
                 <div class="footer text-uppercase text-center">
                     <h2 class="md d-flex  h4 text-secondary justify-content-center ">
                         <p class="text-dark h5"></p>MESMERIZING INDIA 2020
@@ -132,16 +154,12 @@
                     </h3>
                 </div>
             </div>
-            <script>
-                setTimeout(function redirect_to_home() {
-                    window.location.href = '../reponse/index.html';
-
-                }, 6000);
-            </script>
             <!---------
             JS FILES 😊
     ----------->
-            <script src="contact.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+            <script src="./response.js"></script>
             <script src="../../assests/main scripts/js.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
                 integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
